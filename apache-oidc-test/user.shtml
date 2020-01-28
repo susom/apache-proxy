@@ -1,0 +1,12 @@
+<html>
+<head>
+<title>Hello User</title>
+</head>
+<body>
+<p>Hello <!--#echo var=REMOTE_USER_NAME -->!</p>
+<p>You authenticated as: <!--#echo var=REMOTE_USER --></p>
+<p>Your email address is: <!--#echo var=REMOTE_USER_EMAIL --></p>
+<p>Environment:</>
+<p><!--#printenv -->!</p>
+</body>
+</html>
