@@ -59,6 +59,43 @@ docker run -dit -p 8111:80 \
        --name apache-proxy somrit/apache-oidc
 ```
 
+Note the above command pull the pre-built Docker image from our private Docker Hub
+repository. If you don't have access to that, or you are testing customizations of
+the image, just build the container provided in this repository, and reference that
+instead.
+
+```
+cd ../apache-oidc
+docker build --pull -t apache-oidc -f Dockerfile .
+cd ../apache-oidc-test
+docker run -dit -p 8111:80 \
+       -v "$PWD/proxy.conf":/usr/local/apache2/conf/httpd.conf \
+       -v "$PWD/local.secret.conf":/usr/local/apache2/conf/extra/secret.conf \
+       -v "$PWD/oidc.conf":/usr/local/apache2/conf/extra/oidc.conf \
+       --link apache-app:app \
+       --name apache-proxy apache-oidc
+```
+
 Now open a fresh web browser with private (incognito) mode, and go to this url:
 
 [http://localhost:8111/user.shtml](http://localhost:8111/user.shtml)
+
+When something goes wrong, first check the proxy logs:
+
+```
+docker logs -f apache-proxy
+```
+
+Usually that is enough to see what is happening, but you can also look at the app logs:
+
+```
+docker logs -f apache-app
+```
+
+If you modify the configuration files, just restart the proxy (or app, as applicable):
+
+```
+docker restart apache-proxy
+```
+
+
