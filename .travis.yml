@@ -9,6 +9,6 @@ jobs:
     - stage: deploy
       script:
         - echo "$DOCKER_API_TOKEN" | docker login -u "$DOCKER_USERNAME" --password-stdin
-        - export APACHE_REPO=madhus2087/apache-proxy
-        - docker build -f apache-oidc/Dockerfile -t $APACHE_REPO:build-$TRAVIS_BUILD_NUMBER .
-        - docker push $APACHE_REPO
+        - export APACHE_OIDC_REPO=somrit/apache-oidc
+        - docker build -f apache-oidc/Dockerfile -t $APACHE_OIDC_REPO:build-$TRAVIS_BUILD_NUMBER .
+        - docker push $APACHE_OIDC_REPO
