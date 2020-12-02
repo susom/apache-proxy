@@ -1,4 +1,4 @@
-FROM httpd
+FROM httpd:2.4
 
 RUN apt-get update \
   && apt-get install -y --no-install-recommends wget ca-certificates libcjose0 libhiredis0.14 apache2-api-20120211 apache2-bin\
