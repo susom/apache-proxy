@@ -1,5 +1,4 @@
-FROM httpd:2.4.46-alpine@sha256:28e81dcc1e65afafc88067ef9839233c56af72faf2aa4cba529fbd5d7fb81987
-# "Created": "2020-12-17T13:26:10.442999769Z" , "HTTPD_VERSION=2.4.46"
+FROM httpd:latest
 
 RUN apt-get update \
   && apt-get install -y --no-install-recommends wget ca-certificates libcjose0 libhiredis0.14 apache2-api-20120211 apache2-bin\
