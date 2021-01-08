@@ -1,4 +1,4 @@
-FROM httpd:latest
+FROM httpd:2.4.46@sha256:a938cd7d56e715593c5e006c3a61bc9d8e2a7f4083f87437ec89f9042b056226
 
 RUN apt-get update \
   && apt-get install -y --no-install-recommends wget ca-certificates libcjose0 libhiredis0.14 apache2-api-20120211 apache2-bin\
