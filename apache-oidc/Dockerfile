@@ -1,5 +1,5 @@
-FROM httpd:2.4.50@sha256:a0a1605656b89fe249c6306e5646d3d3c2d50606e134d411d8e8f732527cbdbb
-# "Created": 2021-10-05T22:26:27.855077878Z , "Version":"2.4.50"
+FROM httpd:2.4.51@sha256:8ea9c090d7a13d23b39d135b25ab69f08c1d0c7c7eefd9b17700d552a9ff5564
+# "Created": 2021-10-07T19:28:01.4677068Z , "Version":"2.4.51"
 
 RUN apt-get update \
   && apt-get install -y --no-install-recommends wget ca-certificates libcjose0 libhiredis0.14 apache2-api-20120211 apache2-bin\
