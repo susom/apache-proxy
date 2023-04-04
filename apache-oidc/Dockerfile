@@ -3,8 +3,8 @@ FROM httpd:2.4.56@sha256:76618ddd53f315a1436a56dc84ad57032e1b2123f2f6489ce9c575c
 
 RUN apt-get update \
   && apt-get install -y --no-install-recommends wget ca-certificates libcjose0 libhiredis0.14 apache2-api-20120211 apache2-bin\
-  && wget https://github.com/OpenIDC/mod_auth_openidc/releases/download/v2.4.13.1/libapache2-mod-auth-openidc_2.4.13.1-1.buster_amd64.deb \
-  && dpkg -i libapache2-mod-auth-openidc_2.4.13.1-1.buster_amd64.deb \
+  && wget Wget https://github.com/OpenIDC/mod_auth_openidc/releases/download/v2.4.13.2/libapache2-mod-auth-openidc_2.4.13.2-1.buster_amd64.deb \
+  && dpkg -i libapache2-mod-auth-openidc_2.4.13.2-1.buster_amd64.deb \
   && ln -s /usr/lib/apache2/modules/mod_auth_openidc.so /usr/local/apache2/modules/mod_auth_openidc.so \
   && rm -rf /var/log/dpkg.log /var/log/alternatives.log /var/log/apt \
   && touch /usr/local/apache2/conf/extra/secret.conf \
