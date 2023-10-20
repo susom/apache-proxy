@@ -1,4 +1,4 @@
-FROM httpd:2.4.58@sha256:ed6db4a8c394d075c9c59a3dbd61a3818cd302d9948057f1e19046e5bffec027
+FROM httpd:2.4.58@sha256:2f1ec45327a35711f293cf543c2e0efadfd44bc71e8081dcd76a558b99778005
 # "Created": "2023-10-19T19:22:10.741880566Z" , "Version":"2.4.58"
 
 RUN apt-get update \
