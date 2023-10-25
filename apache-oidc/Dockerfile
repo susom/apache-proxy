@@ -6,7 +6,7 @@ RUN apt-get update \
   && wget https://github.com/OpenIDC/mod_auth_openidc/releases/download/v2.4.14.4/libapache2-mod-auth-openidc_2.4.14.4-1.buster_amd64.deb \
   && dpkg -i libapache2-mod-auth-openidc_2.4.14.4-1.buster_amd64.deb \
   && ln -s /usr/lib/apache2/modules/mod_auth_openidc.so /usr/local/apache2/modules/mod_auth_openidc.so \
-  && sudo rm -rf /var/log/dpkg.log /var/log/alternatives.log /var/log/apt \
+  && rm -rf /var/log/dpkg.log /var/log/alternatives.log /var/log/apt \
   && touch /usr/local/apache2/conf/extra/secret.conf \
   && touch /usr/local/apache2/conf/extra/oidc.conf
 
