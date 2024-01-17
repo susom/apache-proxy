@@ -9,4 +9,4 @@ RUN apt-get update \
   && rm -rf /var/log/dpkg.log /var/log/alternatives.log /var/log/apt \
   && touch /usr/local/apache2/conf/extra/secret.conf \
   && touch /usr/local/apache2/conf/extra/oidc.conf
-RUN echo "\n\nLoadModule auth_openidc_module modules/mod_auth_openidc.so\n\nInclude conf/extra/secret.conf\nInclude conf/extra/oidc.conf\n" >> /usr/local/apache2/conf/h
+RUN echo "\n\nLoadModule auth_openidc_module modules/mod_auth_openidc.so\n\nInclude conf/extra/secret.conf\nInclude conf/extra/oidc.conf\n" >> /usr/local/apache2/conf/httpd.conf
