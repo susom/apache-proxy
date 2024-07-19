@@ -1,5 +1,5 @@
-FROM httpd:2.4.61@sha256:fad0c8311b35c689cf1b94fc4783e735a8e3086aebfe318c4e8e0fa224e9ce1b
-# "Created": "2024-07-03T17:31:14Z" , "Version":"2.4.61"
+FROM httpd:2.4.62@sha256:3584a496c4c0b2460755ac97e65caea2e7900be2a303cfb2a59f149aea858c78
+# "Created": "2024-07-17T23:31:14Z" , "Version":"2.4.62"
 
 RUN apt-get update \
   && apt-get install -y --no-install-recommends wget ca-certificates libcjose0 libhiredis0.14 apache2-api-20120211 apache2-bin libldap-2.5-0 libssl3 libldap-common \
