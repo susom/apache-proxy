@@ -1,0 +1,31 @@
+name: apache-proxy
+
+on:
+  push:
+    branches:
+      - master
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-20.04
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Log in to Docker Hub
+      run: echo "${{ secrets.DOCKER_API_TOKEN }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
+
+    - name: Set environment variables
+      run: echo "APACHE_OIDC_REPO=somrit/apache-oidc" >> $GITHUB_ENV
+
+    - name: Build Docker image
+      run: |
+        docker build -f apache-oidc/Dockerfile -t ${{ env.APACHE_OIDC_REPO }}:github-build-${{ github.run_number }} -t ${{ env.APACHE_OIDC_REPO }}:latest .
+
+    - name: Push Docker image (github-build tag)
+      run: docker push ${{ env.APACHE_OIDC_REPO }}:github-build-${{ github.run_number }}
+
+    - name: Push Docker image (latest tag)
+      run: docker push ${{ env.APACHE_OIDC_REPO }}:latest
