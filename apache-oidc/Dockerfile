@@ -1,5 +1,5 @@
-FROM httpd:2.4.65@sha256:f9b88f3f093d925525ec272bbe28e72967ffe1a40da813fe84df9fcb2fad3f30
-# "Created": "2025-11-18T04:19:53.842954616Z" , "Version":"2.4.65", VERSION="13 (trixie)"
+FROM httpd:2.4.66@sha256:82cc3ab69747801892a8867fcbfbcc764bfdce704eceadeef16880654d9950e9
+# "Created": "2025-12-04T19:29:30.755697223Z" , "Version":"2.4.66", VERSION="13 (trixie)"
 
 RUN apt-get update \
   && apt-get install -y --no-install-recommends wget ca-certificates libcjose0 libhiredis1.1.0 apache2-api-20120211 apache2-bin libldap2 libssl3 libldap-common \
